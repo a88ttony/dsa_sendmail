@@ -33,14 +33,17 @@ int main (int argc, char** argv) {
     string content;
     string subject;
     string sender;
+    string receiver_email;
     cout << "sender: ";
     cin >> sender;
+    cout << "receiver's email: ";
+    cin >> receiver_email;
     cout << "receiver: ";
     cin >> receiver;
     cout << "subject: ";
     cin >> subject;
     cout << "content: ";
-    cin >> content;
+    getline(cin >> ws, content);
     char cmd[100];  
 
     char topic[1024]; 
@@ -52,7 +55,7 @@ int main (int argc, char** argv) {
     from[sizeof(from) - 1] = 0;
 
     char to[1024]; 
-    strncpy(to, receiver.c_str(), sizeof(to));
+    strncpy(to, receiver_email.c_str(), sizeof(to));
     to[sizeof(to) - 1] = 0;
 
     char body[1024]; 
